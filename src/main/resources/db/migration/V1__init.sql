@@ -1,0 +1,33 @@
+CREATE TABLE roles (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(20) UNIQUE NOT NULL
+);
+
+CREATE TABLE students (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL
+);
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(50) UNIQUE NOT NULL,
+  password VARCHAR(100) NOT NULL,
+  role_id INT REFERENCES roles(id) ON DELETE CASCADE,
+  student_id INT UNIQUE REFERENCES students(id) ON DELETE SET NULL
+);
+
+CREATE TABLE courses (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(100) NOT NULL,
+  description TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE enrollments (
+  id SERIAL PRIMARY KEY,
+  student_id INT REFERENCES students(id) ON DELETE CASCADE,
+  course_id INT REFERENCES courses(id) ON DELETE CASCADE,
+  enrolled_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE(student_id, course_id)
+);
