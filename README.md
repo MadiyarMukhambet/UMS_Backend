@@ -14,7 +14,7 @@ University Management System — это RESTful веб-приложение, р�
 4. Соберите и запустите проект:
 ./gradlew clean build
 ./gradlew bootRun
-Директория
+ Директория:
  src
 └── main
     ├── java/com/unims
@@ -33,8 +33,8 @@ University Management System — это RESTful веб-приложение, р�
         ├── db/migration   # Flyway миграции
         ├── application.yml
 
-Примеры API эндпоинтов
-🔐 Аутентификация
+
+Examples of API endpoints:
 POST /auth/register – регистрация пользователя
 POST /auth/login – авторизация, возврат JWT токена
 POST /students – создать студента (ADMIN)
@@ -45,7 +45,8 @@ POST /courses – создать курс (TEACHER, ADMIN)
 GET /courses?sort=byDate Сортировать по дате
 POST /enrollments – записать студента на курс (TEACHER, ADMIN)
 
-💻 Используемые технологии
+
+   💻 Используемые технологии
 Java 21
 Spring Boot 3
 Spring Security
