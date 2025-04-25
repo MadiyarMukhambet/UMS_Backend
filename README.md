@@ -1,20 +1,20 @@
 # University Management System (UMS)
 
-## 📚 Описание проекта
+---
 
-University Management System — это RESTful веб-приложение, разработанное на Spring Boot для управления системой университета. Проект поддерживает ролевую авторизацию и полные CRUD-операции для администрирования студентов, преподавателей и курсов.
+University Management System is a RESTful web application developed on Spring Boot for managing the university system. The project supports role-based authorization and full CRUD operations for administering students, teachers and courses.
 
 ---
 
-## 🚀 Как запустить проект
+## 🚀 How to start
 
-1. Установите **PostgreSQL** и создайте базу данных `unims_db`.
-2. Настройте параметры подключения в `application.properties` и `build.gradle.kts`.
-3. Выполните миграции Flyway.
-4. Соберите и запустите проект:
+1. Install PostgreSQL and create the unims_db database.
+2. Configure connection settings in application.properties and build.gradle.kts.
+3. Run Flyway migrations.
+4. Build and run the project:
 ./gradlew clean build
 ./gradlew bootRun
- Директория:
+ Directory:
  src
 └── main
     ├── java/com/unims
@@ -46,7 +46,7 @@ GET /courses?sort=byDate Сортировать по дате
 POST /enrollments – записать студента на курс (TEACHER, ADMIN)
 
 
-   💻 Используемые технологии
+   💻 Technologies used
 Java 21
 Spring Boot 3
 Spring Security
@@ -58,6 +58,6 @@ MapStruct
 Lombok
 
 
-Автор: [Mukhambet Madiyar]
+Author: [Mukhambet Madiyar]
 Email: [madiyarmuhambetov@gmail.com]
 GitHub: [https://github.com/MadiyarMukhambet/UMS_Backend]
